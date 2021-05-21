@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from eda import views
+
 urlpatterns = [
+    path('', views.index, name='main'),
+    path('dataset', views.dataset, name='dataset'),
+    path('analysis', views.analysis, name='analysis'),
+    path('conclude', views.conclude, name='conclude'),
     path('admin/', admin.site.urls),
 ]
