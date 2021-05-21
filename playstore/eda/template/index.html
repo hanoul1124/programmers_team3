@@ -10,11 +10,6 @@
     <button onclick="location.href='{% url 'dataset' %}'">Dataset</button>
     <button onclick="location.href='{% url 'analysis' %}'">Analysis</button>
     <button onclick="location.href='{% url 'conclude' %}'">Conclude</button>
-    {%for item in items%}
-    <p>
-        {{item.title}}
-    </p>
-    <img src="{{item.image.url}}" alt="">
-    {% endfor %}
+    
 </body>
 </html>

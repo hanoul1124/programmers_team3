@@ -4,8 +4,7 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    items = Item.objects.all()
-    context = {'items': items,}
+    context = {}
     return render(request, 'index.html', context)
 
 
@@ -18,6 +17,8 @@ def conclude(request):
 
 
 def analysis(request):
-    return render(request, 'analysis.html', {})
+    items = Item.objects.all()
+    context = {'items': items,}
+    return render(request, 'analysis.html', context)
 
 

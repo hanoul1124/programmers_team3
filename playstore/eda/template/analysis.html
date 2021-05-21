@@ -2,14 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Playstore: Analysis</title>
 </head>
 <body>
-  <h1>Analysis</h1>
-  <button onclick="location.href='{% url 'main' %}'">Home</button>
-  <button onclick="location.href='{% url 'dataset' %}'">Dataset</button>
-  <button onclick="location.href='{% url 'analysis' %}'">Analysis</button>
-  <button onclick="location.href='{% url 'conclude' %}'">Conclude</button>
-
+    <h1>Playstore Data EDA Analysis</h1>
+    <button onclick="location.href='{% url 'main' %}'">Home</button>
+    <button onclick="location.href='{% url 'dataset' %}'">Dataset</button>
+    <button onclick="location.href='{% url 'analysis' %}'">Analysis</button>
+    <button onclick="location.href='{% url 'conclude' %}'">Conclude</button>
+    {%for item in items%}
+    <p>
+        <h1>{{item.title}}</h1>
+    </p>
+    <img src="{{item.image.url}}" alt="">
+    <p>
+        {{item.description}}
+    </p>
+    <hr>
+    {% endfor %}
 </body>
 </html>
